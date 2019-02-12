@@ -1,0 +1,357 @@
+doctype html
+html  
+  include partials/head.pug
+    
+  body
+    .narrow
+      .panel#entry
+        small.dev-note Initial page with sample warning showing. These test panels are iphone 6/7/8 fitting, but should also be close to their desktop counterpart.
+        .inner-block
+          include partials/content-header.pug
+          
+          form.order-form
+            a.upload-photo(href="#" target="_self")
+              i.fa.fa-camera
+              span What would you like to deliver?
+              
+
+            .field-wrapper.pickup-location
+              legend
+                i.fa.fa-map-marker-alt.field-icon
+              input.form-control.d-inline-block(type="text" name="pickup-location" placeholder="From where?")
+                
+            .field-wrapper.destination
+              legend
+                i.fa.fa-map-marker-alt.field-icon
+              input.form-control(type="text" name="destination" placeholder="Destination?")
+              //- .alert.alert-primary.mt-2 Destination required.
+                
+              
+            .place-order
+              div.checkout(value="checkout")
+                  button.btn Go ketit
+                  
+                  
+      .panel#entry
+        small.dev-note After a successful image upload... image thumbnail is generated package name and optional note can be added. Locations are then asked. Addresses should be auto-complete but only limited to Chicago addresses only. Coordinates should be stored in the background for Google Maps GPS tracking.
+        .inner-block
+          include partials/content-header.pug
+          
+          form.order-form
+            
+            .upload-success
+              
+              .thumb
+                img(src="./img/order-000225-th.jpg")
+              
+              input.form-control.item-name(type="text" name="item-name" placeholder="What is this?")
+                
+              .field-wrapper
+                legend
+                  i.fa.fa-comment-alt.field-icon
+                input.form-control.delivery-note(type="text" name="delivery-note" placeholder="Any note for the receiver?")
+              
+
+            .field-wrapper.pickup-location.warning
+              legend
+                i.fa.fa-map-marker-alt.field-icon
+              input.form-control.d-inline-block(type="text" name="pickup-location" placeholder="From where?")
+              .alert.alert-primary.mt-2 You must provide pickup location.
+                
+            .field-wrapper.destination
+              legend
+                i.fa.fa-map-marker-alt.field-icon
+              input.form-control(type="text" name="destination" placeholder="Destination?")
+              
+            .place-order
+              .checkout(value="checkout")
+                  button.btn Go ketit
+                  
+
+                  
+      .panel#checkout
+        small.dev-note Checkout
+        .inner-block
+          include partials/content-header.pug
+            
+            
+          a.go-back(href="#")
+            i.fa.fa-arrow-left
+            span Make changes to order
+          //- .order-summary
+            ul.definition-list
+              li
+                .lt Item
+                .ld
+                  strong Donuts for my stepsister
+              li
+                .lt Pickup
+                .ld
+                  strong 4309 S Morgan St
+                  br
+                  | Apartment 23B
+              li
+                .lt Destination
+                .ld
+                  strong 1225 N. Wells Street
+                  br
+                  | 2nd Line Address
+          
+          form.order-form  
+            .billing-details
+              h4 Billing Details
+              fieldset
+                .field-wrapper.customer-name
+                  input.form-control.customer-name(placeholder="Your name")
+                .field-wrapper.phone-number
+                  legend
+                    i.fa.fa-mobile-alt.field-icon 
+                  input.form-control.phone-number(placeholder="Phone Number")
+              
+            .payment-options
+              .outlet.selected
+                .radio-btn.on
+                strong Credit Card
+              .outlet
+                .radio-btn
+                strong Venmo
+              .outlet
+                .radio-btn
+                strong Paypal
+                    
+            .place-order
+              .checkout(value="checkout")
+                  button.btn Pay
+                  
+                  
+      .panel#confirmation
+        small.dev-note After user checks out, but BEFORE COURIER APPROVES, user should receive a pending transaction notice. / We may cross-fade between order summary and this notice in 2 second intervals indefinitely. "GPS Tracking" button is hidden this time, and only appears after courier accepts the task.
+        .inner-block
+          header
+            a.d-block.logo-secondary(href="#")
+              img(src="img/logo-xs.png")
+            
+          .order-summary
+            .waiting-notice
+              h5 Waiting for Confirmation
+              
+              p.text-center.mb-5 Please be patient until the next courier is available. You will not be charged until your courier accepts the task.
+            
+              .alert.alert-secondary <i>ETA: 12 minutes</i>
+            
+          .milestone
+            .timeline#user
+            .step.waiting
+              .indicator
+                .blip.on
+                  i.fa.fa-ellipsis-h
+                  //- i.fa.fa-check
+              .status
+                strong Waiting for confirmation
+                //- em.d-inline-block.timestamp 7:26pm
+                
+            .step.pickup
+              .indicator
+                .blip.off
+                  //- i.fa.fa-check
+              .status
+                strong En Route
+                //- em.d-inline-block.timestamp 7:32pm
+              
+            .step.delivery
+              .indicator
+                .blip.off
+                  //- i.fa.fa-ellipsis-h
+              .status
+                strong In Transit
+                //- em.d-inline-block.timestamp 7:42pm
+
+
+
+      .panel#confirmed
+        small.dev-note When courier approves the delivery task, 1st beachon "Waiting for confirmation" ticked. Status is then converted to "Orider confirmed", with added timestamp below. 
+        .inner-block
+          header
+            a.d-block.logo-secondary.float-left(href="#")
+              img(src="img/logo-xs.png")
+            button.btn.btn-track GPS Tracking
+            
+          .order-summary
+            h5 En Route
+            ul.definition-list
+              li
+                .lt Item
+                .ld
+                  strong Donuts for my stepsister
+              li
+                .lt Pickup
+                .ld
+                  strong 4309 S Morgan St
+                  br
+                  | Apartment 23B
+              li
+                .lt Destination
+                .ld
+                  strong 1225 N. Wells Street
+                  br
+                  | 2nd Line Address
+            
+          .milestone
+            .timeline#user
+            .step.waiting
+              .indicator
+                .blip.iff
+                  //- i.fa.fa-ellipsis-h
+                  i.fa.fa-check
+              .status
+                strong.d-block Order Confirmed
+                em.d-inline-block.timestamp 7:26pm
+                
+            .step.pickup
+              .indicator
+                .blip.on
+                  i.fa.fa-ellipsis-h
+                  //- i.fa.fa-check
+              .status
+                strong.d-block En Route
+                //- em.d-inline-block.timestamp 7:32pm
+              
+            .step.delivery
+              .indicator
+                .blip.off
+                  //- i.fa.fa-check
+                  //- i.fa.fa-ellipsis-h
+              .status
+                strong.d-block In Transit
+                //- em.d-inline-block.timestamp 7:42pm
+
+
+      .panel#confirmed
+        small.dev-note This is the courier's view after receiving a new delivery request. Just before he decides to accept the deliver task. "Lezgo Keetit" sends a signal to the customer and activates her second milestone. Button is replaced with "Confirm Pickup" (please see next slide)
+        
+        .inner-block
+          header.courier-toolbar
+            h5 Hey Jesse, go gettem.
+            
+          h4.package-name Donuts for my stepsister
+            
+          .milestone
+            .timeline#courier
+            .step.waiting
+              .indicator
+                .blip.on
+                  //- i.fa.fa-check
+                  i.fa.fa-ellipsis-h
+              .status
+                div
+                  strong 4309 S Morgan St
+                  br
+                  | Apartment 23B
+                em.d-inline-block.timestamp 2.2 miles
+                
+            .step.pickup
+              .indicator
+                .blip.off
+                  //- i.fa.fa-check
+                  //- i.fa.fa-ellipsis-h
+              .status
+                div
+                  strong 1225 N. Wells Street
+                  br
+                  | 2nd Line Address
+                //- em.d-inline-block.timestamp 7:32pm
+          
+          .customer-info
+            .customer-name Candice
+            .customer-phone (099) 234 1314
+            .customer-note Please look for Sugar, and tell her she needs to boil it first before eating.
+                
+          center
+            small Ready to Roll?
+            br
+            button.btn.btn-confirm Lezgo Keeetit!
+                                
+      .panel#confirmed
+        small.dev-note "Confirm Pickup" sends a signal to customer, and completes her 2nd beacon. Now 3rd beacon should be activated. Same action happens with "Confirm Delivery" on the next slide.
+        .inner-block
+          header.courier-toolbar
+            h5 Hey Jesse, go gettem.
+            
+          h4.package-name Donuts for my stepsister
+            
+          .milestone
+            .timeline#courier
+            .step.waiting
+              .indicator
+                .blip.on
+                  //- i.fa.fa-check
+                  i.fa.fa-ellipsis-h
+              .status
+                div
+                  strong 4309 S Morgan St
+                  br
+                  | Apartment 23B
+                em.d-inline-block.timestamp 2.2 miles
+                
+            .step.pickup
+              .indicator
+                .blip.off
+                  //- i.fa.fa-check
+                  //- i.fa.fa-ellipsis-h
+              .status
+                div
+                  strong 1225 N. Wells Street
+                  br
+                  | 2nd Line Address
+                //- em.d-inline-block.timestamp 7:32pm
+          
+          .customer-info
+            .customer-name Candice
+            .customer-phone (099) 234 1314
+            .customer-note Please look for Sugar, and tell her she needs to boil it first before eating.
+                
+          center
+            button.btn.btn-confirm Confirm Pickup
+                                
+      .panel#confirmed
+        .inner-block
+          header.courier-toolbar
+            h5 Hey Jesse, go gettem.
+            
+          h4.package-name Donuts for my stepsister
+            
+          .milestone
+            .timeline#courier
+            .step.waiting
+              .indicator
+                .blip.off
+                  i.fa.fa-check
+                  //- i.fa.fa-ellipsis-h
+              .status
+                div
+                  strong 4309 S Morgan St
+                  br
+                  | Apartment 23B
+                //- em.d-inline-block.timestamp 2.2 miles
+                
+            .step.pickup
+              .indicator
+                .blip.on
+                  //- i.fa.fa-check
+                  i.fa.fa-ellipsis-h
+              .status
+                div
+                  strong 1225 N. Wells Street
+                  br
+                  | 2nd Line Address
+                em.d-inline-block.timestamp 4.2 miles
+                
+          .customer-info
+            .customer-name Candice
+            .customer-phone (099) 234 1314
+            .customer-note Please look for Sugar, and tell her she needs to boil it first before eating.
+            
+          center
+            button.btn.btn-confirm Confirm Delivery
+                                
+    include partials/content-footer.pug

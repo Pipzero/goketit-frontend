@@ -1,0 +1,275 @@
+doctype html
+html  
+  include partials/head.pug
+    
+  body
+    .wider
+      section
+        .inner-block
+          include partials/content-header.pug
+          
+          form.order-form
+            
+            a.upload-photo(href="#" target="_self")
+              i.fa.fa-camera.d-block
+              span.d-inline-block
+                | What would you
+                br
+                | like to deliver?
+              
+
+              
+            .field-wrapper.pickup-location
+              legend
+                i.fa.fa-map-marker-alt.field-icon
+              input.form-control.d-inline-block(type="text" name="pickup-location" placeholder="From where?")
+                
+            
+            .field-wrapper.destination
+              legend
+                i.fa.fa-map-marker-alt.field-icon
+              input.form-control(type="text" name="destination-primary" placeholder="Destination?")
+                
+                
+
+            .checkout(value="checkout")
+                button.btn.inactive Go ketit
+          
+      section
+        article
+          .inner-block
+            include partials/content-header.pug
+            
+            form.order-form
+              
+              .item-info
+                .item-picture
+                  .thumb
+                    img(src="./img/order-000225-th.jpg")
+                  .fullsize
+                
+                input.form-control.item-name(type="text" name="item-name" placeholder="What is this?")
+                input.form-control.delivery-note(type="text" name="delivery-note" placeholder="Any note for the receiver?")
+                
+
+              .field-wrapper.pickup-location
+                legend
+                  i.fa.fa-map-marker-alt.field-icon
+                input.form-control.d-inline-block(type="text" name="pickup-location" placeholder="4309 S Morgan St")
+                input.form-control.d-inline-block(type="text" name="pickup-secondary" class="pickup-secondary small" placeholder="Floor, Unit , Room, or Apartment Number") 
+                  
+                //- .alert.alert-primary.mt-2 Pickup location required.
+
+                  
+              .field-wrapper.destination.warning
+                legend
+                  i.fa.fa-map-marker-alt.field-icon
+                input.form-control(type="text" name="destination" placeholder="Destination?")
+                .alert.alert-primary.mt-2 Pickup location required.
+                
+              .place-order
+                .checkout(value="checkout")
+                    button.btn Go ketit
+        
+      section
+        article
+          .inner-block
+            //- include partials/content-header.pug
+              
+            a.go-back(href="#")
+              i.fa.fa-arrow-left
+              
+            .order-summary
+              h5.package-name Donuts for my stepsister
+              
+              ul.definition-list
+                li
+                  .lt Pickup
+                  .ld
+                    strong 4309 S Morgan St
+                    br
+                    | Apartment 23B
+                li
+                  .lt Destination
+                  .ld
+                    strong 1225 N. Wells Street
+                    br
+                    | 2nd Line Address
+                    
+            form.order-form  
+              .billing-details
+                h4 Billing Details
+                fieldset
+                  .field-wrapper.customer-name
+                    input.form-control.customer-name(placeholder="Your name")
+                  .field-wrapper.phone-number
+                    legend
+                      i.fa.fa-mobile-alt.field-icon 
+                    input.form-control.phone-number(placeholder="Phone Number")
+                
+              .payment-options
+                .outlet.selected
+                  .radio-btn.on
+                  strong Credit Card
+                .outlet
+                  .radio-btn
+                  strong Venmo
+                .outlet
+                  .radio-btn
+                  strong Paypal
+                      
+              .place-order
+                .checkout(value="checkout")
+                    button.btn Pay
+      section
+        article
+          .inner-block
+            header
+              a.d-block.logo-secondary(href="#")
+                img(src="img/logo-xs.png")
+              
+            .delivery-status
+              h5 Waiting for Confirmation
+              img.anim(src="./img/runna.gif")
+              p Please be patient until the next courier is available. You will not be charged until your courier accepts the task.
+              
+              .alert.alert-secondary <i>ETA: 12 minutes</i>
+              
+            .milestone
+              .inner
+                .timeline#user
+                .step.waiting
+                  .indicator
+                    .blip.on
+                      i.fa.fa-ellipsis-h
+                      //- i.fa.fa-check
+                  .status
+                    strong Confirmed
+                    //- em.d-inline-block.timestamp 7:26pm
+                    
+                .step.pickup
+                  .indicator
+                    .blip.off
+                      //- i.fa.fa-check
+                  .status
+                    strong En Route
+                    //- em.d-inline-block.timestamp 7:32pm
+                  
+                .step.delivery
+                  .indicator
+                    .blip.off
+                      //- i.fa.fa-ellipsis-h
+                  .status
+                    strong Delivered
+                    //- em.d-inline-block.timestamp 7:42pm
+                  
+      section
+        article
+          .inner-block
+            header
+              a.d-block.logo-secondary.float-left(href="#")
+                img(src="img/logo-xs.png")
+              button.btn.btn-track GPS Tracking
+              
+            .order-summary
+              //- h5 En Route
+              h5.package-name Donuts for my stepsister
+              
+              .item-picture
+                .thumb
+                  img(src="./img/order-000225-th.jpg")
+                    
+              ul.definition-list
+                li
+                  .lt Pickup
+                  .ld
+                    strong 4309 S Morgan St 4309 S Morgan St
+                    br
+                    | Apartment 23B
+                li
+                  .lt Destination
+                  .ld
+                    strong 1225 N. Wells Street
+                    br
+                    | 2nd Line Address
+              
+            .milestone
+              .inner
+                .timeline#user
+                .step.waiting
+                  .indicator
+                    .blip.iff
+                      //- i.fa.fa-ellipsis-h
+                      i.fa.fa-check
+                  .status
+                    strong.d-block Confirmed
+                    em.d-inline-block.timestamp 7:26pm
+                    
+                .step.pickup
+                  .indicator
+                    .blip.on
+                      i.fa.fa-ellipsis-h
+                      //- i.fa.fa-check
+                  .status
+                    strong.d-block En Route
+                    //- em.d-inline-block.timestamp 7:32pm
+                  
+                .step.delivery
+                  .indicator
+                    .blip.off
+                      //- i.fa.fa-check
+                      //- i.fa.fa-ellipsis-h
+                  .status
+                    strong.d-block Delivered
+                    //- em.d-inline-block.timestamp 7:42pm
+                  
+      section
+        article
+          .inner-block
+            header.courier-toolbar
+              h6.float-left Hey Jesse, go gettem.
+              a
+                i.fa.fa-bars.mt-1.float-right
+                  
+                  
+            .order-summary
+              h5.package-name Donuts for my stepsister
+              
+            .milestone
+              .inner
+                .timeline#courier
+                .step.waiting
+                  .indicator
+                    .blip.on
+                      //- i.fa.fa-check
+                      i.fa.fa-ellipsis-h
+                  .status
+                    div
+                      strong 4309 S Morgan St
+                      br
+                      | Apartment 23B
+                    em.d-inline-block.timestamp 2.2 miles
+                    
+                .step.pickup
+                  .indicator
+                    .blip.off
+                      //- i.fa.fa-check
+                      //- i.fa.fa-ellipsis-h
+                  .status
+                    div
+                      strong 1225 N. Wells Street Longer Address Preparation
+                      br
+                      | 2nd Line Address
+                    //- em.d-inline-block.timestamp 7:32pm
+            
+            .customer-info
+              .customer-name Candice
+              .customer-phone (099) 234 1314
+              .customer-note Please look for Sugar, and tell her she needs to boil it first before eating.
+                  
+            center
+              small Ready to Roll?
+              br
+              button.btn.btn-confirm.mb-5 Lezgo Keeetit!
+              
+    include partials/content-footer.pug

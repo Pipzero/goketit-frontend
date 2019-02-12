@@ -1,0 +1,62 @@
+{
+  "name": "gulp-sass-starter",
+  "version": "1.0.1",
+  "description": "A simple starter kit builded with Gulp, SASS, and js/sass lint for better coding",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "gulp sass_lint && jshint -c .jshintrc --verbose src/js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianeto/gulp-sass-starter.git"
+  },
+  "author": "brianeto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brianeto/gulp-sass-starter/issues"
+  },
+  "keywords": [
+    "Gulp",
+    "SASS",
+    "Babel",
+    "browser-sync",
+    "stylelint",
+    "jshint",
+    "Husky",
+    "imagemin",
+    "Static Pages",
+    "Starter kit",
+    "modular",
+    "BEM",
+    "SMACSS",
+    "OOCSS"
+  ],
+  "homepage": "https://github.com/brianeto/gulp-sass-starter#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.2.6",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.7",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-notify": "3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^3.2.1",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-stylelint": "^6.0.0",
+    "gulp-uglify": "^3.0.1",
+    "husky": "0.14.3",
+    "jshint-stylish": "2.2.1",
+    "stylelint": "^8.4.0"
+  },
+  "dependencies": {
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
+    "jshint": "^2.9.6"
+  }
+}
