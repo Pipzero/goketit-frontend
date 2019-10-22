@@ -1,4 +1,4 @@
-# gulp-sass-starter
+# GoKetit Prototype
 
 ## Description
 
