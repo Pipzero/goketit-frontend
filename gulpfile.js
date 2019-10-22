@@ -15,7 +15,7 @@ const
 
 
 function html() {
-  return src('src/**/*.pug')
+  return src('src/*.pug')
     .pipe(plumber())
     .pipe(pug({
       pretty: true
