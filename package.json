@@ -1,62 +1,49 @@
 {
-  "name": "gulp-sass-starter",
-  "version": "1.0.1",
-  "description": "A simple starter kit builded with Gulp, SASS, and js/sass lint for better coding",
-  "main": "index.html",
+  "name": "goketit-frontend-prototype",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "precommit": "gulp sass_lint && jshint -c .jshintrc --verbose src/js"
+    "gulpwatch": "gulp watch",
+    "gulpstyles": "gulp sass",
+    "gulpscripts": "gulp scripts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brianeto/gulp-sass-starter.git"
-  },
-  "author": "brianeto",
+  "author": "Pipo Sulpico",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/brianeto/gulp-sass-starter/issues"
-  },
-  "keywords": [
-    "Gulp",
-    "SASS",
-    "Babel",
-    "browser-sync",
-    "stylelint",
-    "jshint",
-    "Husky",
-    "imagemin",
-    "Static Pages",
-    "Starter kit",
-    "modular",
-    "BEM",
-    "SMACSS",
-    "OOCSS"
-  ],
-  "homepage": "https://github.com/brianeto/gulp-sass-starter#readme",
   "devDependencies": {
-    "autoprefixer": "^7.2.6",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.24.7",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-notify": "3.0.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^7.0.1",
-    "gulp-pug": "^4.0.1",
-    "gulp-sass": "^3.2.1",
-    "gulp-sass-lint": "^1.4.0",
-    "gulp-stylelint": "^6.0.0",
-    "gulp-uglify": "^3.0.1",
-    "husky": "0.14.3",
-    "jshint-stylish": "2.2.1",
-    "stylelint": "^8.4.0"
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "node-sass": "^4.12.0",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
   },
   "dependencies": {
-    "babel-plugin-transform-remove-strict-mode": "0.0.2",
-    "jshint": "^2.9.6"
-  }
+    "autoprefixer": "^9.6.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1",
+    "jquery": "3.3.1",
+    "natives": "^1.1.6"
+  },
+  "description": "A simple starter kit builded with Gulp, SASS, and js/sass lint for better coding",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pipzero/goketit-frontend.git"
+  },
+  "keywords": [
+    "goketit",
+    "prototype"
+  ],
+  "bugs": {
+    "url": "https://github.com/Pipzero/goketit-frontend/issues"
+  },
+  "homepage": "https://github.com/Pipzero/goketit-frontend#readme"
 }

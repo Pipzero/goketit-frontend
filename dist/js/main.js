@@ -1,12 +1,19 @@
 // QSA ITERATOR
 
-var elements = $('.classname');
+var elements = $('.classname')
 
-for (var i = 0; i < elements.length; i++) {}
-
-function $(el) {
-  return document.querySelectorAll(el);
+for (var i = 0; i < elements.length; i++) {
 }
+
+
+function $(el){
+  return document.querySelectorAll(el)
+}
+
+
+
+
+
 
 //JSON EXCERCISE - DOORWAY TO THE REST API WORLD :D
 //json-excercise.html
